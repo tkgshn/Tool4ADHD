@@ -1,0 +1,120 @@
+<!--
+ * @file index.html
+ * @brief ADHDの方向けシンプルWebページ＋ツール連携プロジェクトカード集
+ * @author あなたの名前
+ * @description GitHub Pagesで公開するための静的HTML
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tool4ADHD - ツール連携プロジェクト集</title>
+  <!--
+    シンプルで見やすいデザインを意識しています。
+    余計な装飾を避け、情報を厳選しています。
+  -->
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Meiryo', sans-serif;
+      background: #f7fafc;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      margin-top: 48px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-size: 1.2rem;
+      max-width: 400px;
+      margin: 0 auto 1.5em auto;
+    }
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 2em;
+    }
+    .project-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 1.5em 1.2em;
+      width: 320px;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .project-card h2 {
+      font-size: 1.2rem;
+      margin: 0 0 0.5em 0;
+      color: #1a4a7a;
+    }
+    .project-card p {
+      font-size: 1rem;
+      margin: 0;
+      color: #333;
+    }
+    @media (max-width: 700px) {
+      .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+      .project-card {
+        width: 95vw;
+        max-width: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tool4ADHD</h1>
+    <p>ADHDの方や初心者でも迷わず使える、シンプルなWebツールと連携プロジェクト集です。</p>
+  </header>
+  <main>
+    <div class="cards-container">
+      <div class="project-card">
+        <h2>praud → Scrapbox</h2>
+        <p>praudの日記やメモをScrapbox形式に変換してインポートできるツールです。</p>
+      </div>
+      <div class="project-card">
+        <h2>twitter → Scrapbox</h2>
+        <p>ツイートやリツイートを自動でScrapboxの日付ページに追加するツールです（例：<a href='https://github.com/tkgshn/X2Scb' target='_blank'>X2Scb</a>）。</p>
+      </div>
+      <div class="project-card">
+        <h2>beeper → Scrapbox</h2>
+        <p>beeperのメッセージ履歴をScrapbox形式に変換してまとめるツールです。</p>
+      </div>
+      <div class="project-card">
+        <h2>Googleロケーション履歴 → Scrapbox</h2>
+        <p>Googleロケーション履歴を日記形式でScrapboxにまとめるツールです。</p>
+      </div>
+      <div class="project-card">
+        <h2>タスクマネジメント on Scrapbox</h2>
+        <p>Scrapbox上でタスク管理を行うためのテンプレートや自動化ツールです。</p>
+      </div>
+    </div>
+  </main>
+  <!--
+    追加機能やカスタマイズは、ここから拡張できます。
+    例: ボタンやチェックリストなど
+  -->
+</body>
+</html>
