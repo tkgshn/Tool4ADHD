@@ -1,19 +1,15 @@
 <!--
  * @file index.html
- * @brief ADHDの方向けシンプルWebページ＋ツール連携プロジェクトカード集
+ * @brief 情報整理レイヤー構造付きWebページ
  * @author あなたの名前
- * @description GitHub Pagesで公開するための静的HTML
+ * @description インプット・プロセス・アウトプットの3レイヤーで情報整理した全体像を掲載
 -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tool4ADHD - ツール連携プロジェクト集</title>
-  <!--
-    シンプルで見やすいデザインを意識しています。
-    余計な装飾を避け、情報を厳選しています。
-  -->
+  <title>Tool4ADHD - 情報整理レイヤー構造</title>
   <style>
     body {
       font-family: 'Segoe UI', 'Meiryo', sans-serif;
@@ -27,94 +23,186 @@
       min-height: 100vh;
     }
     header {
-      margin-top: 48px;
-      margin-bottom: 24px;
+      margin-top: 40px;
+      margin-bottom: 16px;
       text-align: center;
     }
     h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5em;
+      font-size: 2.1rem;
+      margin-bottom: 0.3em;
     }
-    p {
-      font-size: 1.2rem;
-      max-width: 400px;
-      margin: 0 auto 1.5em auto;
+    .diagram {
+      background: #e6f0fa;
+      border-radius: 10px;
+      padding: 1.2em 1em;
+      margin-bottom: 2em;
+      max-width: 700px;
+      width: 95vw;
+      font-family: 'Menlo', 'Consolas', monospace;
+      font-size: 0.98rem;
+      color: #1a4a7a;
+      white-space: pre;
+      overflow-x: auto;
+    }
+    .layer-section {
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 2.5em;
+    }
+    .layer-title {
+      font-size: 1.3rem;
+      color: #1a4a7a;
+      margin-bottom: 0.7em;
+      margin-left: 0.2em;
     }
     .cards-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 24px;
-      width: 100%;
-      max-width: 900px;
-      margin-bottom: 2em;
+      gap: 20px;
+      justify-content: flex-start;
     }
-    .project-card {
+    .info-card {
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      padding: 1.5em 1.2em;
-      width: 320px;
-      min-height: 120px;
+      padding: 1.2em 1em;
+      width: 270px;
+      min-height: 90px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
     }
-    .project-card h2 {
-      font-size: 1.2rem;
-      margin: 0 0 0.5em 0;
+    .info-card h3 {
+      font-size: 1.08rem;
+      margin: 0 0 0.3em 0;
       color: #1a4a7a;
     }
-    .project-card p {
-      font-size: 1rem;
+    .info-card p {
+      font-size: 0.98rem;
       margin: 0;
       color: #333;
+    }
+    .info-card .anno-link {
+      font-size: 0.95em;
+      color: #1a4a7a;
+      text-decoration: underline;
+      margin-top: 0.3em;
     }
     @media (max-width: 700px) {
       .cards-container {
         flex-direction: column;
         align-items: center;
-        gap: 16px;
+        gap: 12px;
       }
-      .project-card {
+      .info-card {
         width: 95vw;
         max-width: 400px;
+      }
+      .diagram {
+        font-size: 0.92rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Tool4ADHD</h1>
-    <p>ADHDの方や初心者でも迷わず使える、シンプルなWebツールと連携プロジェクト集です。</p>
+    <h1>Tool4ADHD 情報整理レイヤー構造</h1>
+    <p>大量の情報を「記号」として脳内に設置しやすくするための全体像</p>
   </header>
+  <div class="diagram">
+Input（情報取得）
+  ↓
+Process（整理・変換・記号化）
+  ↓
+Output（記録・活用・再利用）
+
+例：
+Twitter/ノート/日記/メッセージ/位置情報
+  ↓
+要約・タグ付け・Scrapbox形式変換・Kindle送信
+  ↓
+Scrapbox/Kindle/タスク管理
+  </div>
+
   <main>
-    <div class="cards-container">
-      <div class="project-card">
-        <h2>praud → Scrapbox</h2>
-        <p>praudの日記やメモをScrapbox形式に変換してインポートできるツールです。</p>
+    <!-- Input Layer -->
+    <section class="layer-section">
+      <div class="layer-title">インプット（情報の取得・収集）</div>
+      <div class="cards-container">
+        <div class="info-card">
+          <h3>Twitter（ツイート・リツイート）</h3>
+          <p>
+            <b>X2Scb</b>は、Twitterのツイートやリツイートを自動でScrapboxの日付ページに追加できるツールです。<br>
+            バックエンドでTwitter APIとOpenAI APIを使い、ツイート取得・リツイートの要約を自動化。<br>
+            TampermonkeyスクリプトでScrapboxページに自動貼り付けも可能。<br>
+            <a href="https://github.com/tkgshn/X2Scb" target="_blank">GitHub: tkgshn/X2Scb</a>
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Webクリップ</h3>
+          <p>
+            <b>Anno</b>はWebページをScrapboxにワンクリップで保存できるツールです。<br>
+            クリップした内容は自動で日付ページと紐づき、<code>[public.icon]</code>タグが付与されます。<br>
+            要約やキーワード抽出、キークエスチョン生成などのカスタマイズも可能です。<br>
+            <a href="https://github.com/tkgshn/anno" target="_blank">GitHub: tkgshn/anno</a>
+          </p>
+          <p>
+            <b>iOSショートカット</b>を使えば、お気に入りの記事（URL）をスマホからScrapboxに直接保存できます。
+          </p>
+        </div>
       </div>
-      <div class="project-card">
-        <h2>twitter → Scrapbox</h2>
-        <p>ツイートやリツイートを自動でScrapboxの日付ページに追加するツールです（例：<a href='https://github.com/tkgshn/X2Scb' target='_blank'>X2Scb</a>）。</p>
+      <div class="cards-container" style="margin-top: 1.5em;">
+        <div class="info-card">
+          <h3>praud AIボイスレコーダー（発話・会話）</h3>
+          <p>音声を自動でテキスト化し、会話や発話の記録をScrapboxに保存します。<br><span style="color:#888;">WIP: 詳細は今後追加予定</span></p>
+        </div>
+        <div class="info-card">
+          <h3>ChatGPTとの対話ログ（対話履歴）</h3>
+          <p>ChatGPTなどAIとの対話履歴をScrapboxに記録し、思考の流れを可視化します。<br><span style="color:#888;">WIP: 詳細は今後追加予定</span></p>
+        </div>
+        <div class="info-card">
+          <h3>Googleロケーション履歴（物理的な移動）</h3>
+          <p>Googleロケーション履歴を使って、日々の移動データをScrapboxに記録・可視化します。<br><span style="color:#888;">WIP: 詳細は今後追加予定</span></p>
+        </div>
+        <div class="info-card">
+          <h3>毎日の予定（カレンダー連携・GPT秘書）</h3>
+          <p>Googleカレンダー等から予定を取得し、GPTで要約やリマインドを行う仕組み。<br><span style="color:#888;">WIP: 詳細は今後追加予定</span></p>
+        </div>
+        <div class="info-card">
+          <h3>天気予報</h3>
+          <p>その日の天気情報を自動取得し、日記や予定と一緒にScrapboxへ記録。<br><span style="color:#888;">WIP: 詳細は今後追加予定</span></p>
+        </div>
+        <div class="info-card">
+          <h3>会う人とのコミュニケーション履歴</h3>
+          <p>予定や連絡先と連携し、会った人とのやりとりを自動で記録。<br><span style="color:#888;">WIP: 詳細は今後追加予定</span></p>
+        </div>
       </div>
-      <div class="project-card">
-        <h2>beeper → Scrapbox</h2>
-        <p>beeperのメッセージ履歴をScrapbox形式に変換してまとめるツールです。</p>
+    </section>
+
+    <!-- Process Layer -->
+    <section class="layer-section">
+      <div class="layer-title">プロセス（情報の整理・変換・記号化）</div>
+      <div class="cards-container">
+        <div class="info-card">
+          <h3>プロセス全般</h3>
+          <p><span style="color:#888;">WIP: 詳細は今後追加予定</span></p>
+        </div>
       </div>
-      <div class="project-card">
-        <h2>Googleロケーション履歴 → Scrapbox</h2>
-        <p>Googleロケーション履歴を日記形式でScrapboxにまとめるツールです。</p>
+    </section>
+
+    <!-- Output Layer -->
+    <section class="layer-section">
+      <div class="layer-title">アウトプット（記録・活用・再利用）</div>
+      <div class="cards-container">
+        <div class="info-card">
+          <h3>アウトプット全般</h3>
+          <p><span style="color:#888;">WIP: 詳細は今後追加予定</span></p>
+        </div>
       </div>
-      <div class="project-card">
-        <h2>タスクマネジメント on Scrapbox</h2>
-        <p>Scrapbox上でタスク管理を行うためのテンプレートや自動化ツールです。</p>
-      </div>
-    </div>
+    </section>
   </main>
   <!--
-    追加機能やカスタマイズは、ここから拡張できます。
-    例: ボタンやチェックリストなど
+    追加アイディアやレイヤーはここから拡張できます。
   -->
 </body>
 </html>
